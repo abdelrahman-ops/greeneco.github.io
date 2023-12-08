@@ -1,0 +1,346 @@
+/* styles.css */
+:root {
+    --darkred: #540B0E;
+    --lightRed: #9E2A2B;
+    --darkYellow: #E09F3E;
+    --vanilla: #FFF3B0;
+    --grey: #335C67;
+    --dark: #0b0217;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+a{
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease;
+}
+
+header {
+    background-color: #335C67;
+    /*background: transparent;*/
+    color: #fff;
+    position: relative;
+    height: 150px;
+    width: 100%;
+    z-index: 100;
+    padding: 0 20px;
+    transition: background-color 0.3s ease;
+}
+.nav {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
+}
+.nav,
+.nav_item {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+}
+.nav_logo,
+.nav_link,
+.button {
+    color: #fff;  
+}
+.nav_logo {
+    font-size: 30px;
+}
+.nav_item {
+    column-gap: 25px;
+    
+}
+.nav_link:hover {
+    color: #E09F3E;
+}
+.button {
+    padding: 6px 24px;
+    border: 2px solid #fff;
+    background-color: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.button:active {
+    transform: scale(0.98);
+}
+.nav_link{
+    transition: background-color 0.3s ease;
+}
+section {
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* Home */
+.home {
+    margin-top: 20px;
+    position: relative;
+    height: 75vh;
+    width: 100%;
+    background-image: url("/images/waste1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.home::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-out;
+}
+.home.show::before{
+    opacity: 1;
+    pointer-events: auto;
+}
+/* Form  */
+.form_container{
+    position: absolute;
+    max-width: 320px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 101;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease-out;
+}
+.home.show .form_container{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+.signup_form {
+    display: none;
+}
+.form_container.active .signup_form{
+    display: block;
+}
+.form_container.active .login_form{
+    display: none;
+}
+.form_close{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #0b0217;
+    font-size: 22px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.form_container h2{
+    font-size: 22px;
+    color: #0b0217;
+    text-align: center;
+    
+}
+.input_box{
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+}
+.input_box input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 30px;
+    color: #333;
+    transition: all 0.2s ease;
+    border-bottom: 1.5px solid #aaaaaa;
+}
+.input_box input:focus{
+    border-color: #9E2A2B;
+}
+.input_box i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+.input_box i.email,
+.input_box i.password {
+    left: 0;
+    color: #707070;
+}
+.input_box input:focus ~ i.email,
+.input_box input:focus ~ i.password{
+    color: #9E2A2B;
+}
+.input_box i.pw_hide{
+    right: 0;
+    font-size: 18px;
+    cursor: pointer;
+}
+.option_field{
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content:  space-between;
+}
+.form_container a{
+    color: #9E2A2B;
+    font-size: 12px;
+}
+.form_container a:hover{
+    text-decoration: underline;
+}
+.checkbox{
+    display: flex;
+    column-gap: 8px;
+    white-space: nowrap;
+    font-size: 12px;
+}
+.checkbox input{
+    accent-color: #9E2A2B;
+}
+.checkbox label {
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+    color: #0b0217;
+}
+.form_container .button{
+    background: #9E2A2B;
+    margin-top: 30px;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+.login_signup{
+    font-size: 12px;
+    text-align: center;
+    margin-top: 15px;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.title-container {
+    text-align: center;
+    margin: 30px;
+    color: #540B0E ;
+}
+.title-container p{
+    color: #335C67;
+}
+.climate-change-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.info-card {
+    flex: 1;
+    max-width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size:medium;
+    
+}
+
+.info-card h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+.info-card p {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.how h2{
+    color: var(--dark);
+}
+.how h3{
+    color: var(--dark);
+}
+.how p{
+    color: var(--darkred);
+}
+
+#how-it-works,
+#testimonials,
+#impact {
+    padding: 50px 0;
+    text-align: center;
+    border: 0.1px solid #403f4117;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1;
+    max-width: 300px;
+    margin: 20px;
+}
+.step h3:hover{
+    color: #E09F3E;
+}
+
+
+#impact {
+    color: var(--dark);
+    border: 0.1px solid #403f4117;
+}
+
+
+.hidden-form {
+    display: none;
+}
+
+
+footer {
+    background-image: url('/images/paper.png');
+    background-size: cover;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    background-color: #0b0217;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 10px 0;
+}
+
+.footer-content a {
+    color: #42a5f5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+
