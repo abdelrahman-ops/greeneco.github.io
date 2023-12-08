@@ -36,3 +36,13 @@ loginBtn.addEventListener("click", (e) => {
 if (!formOpenBtn || !home || !formContainer || !formCloseBtn || !signupBtn || !loginBtn || !pwShadowHide) {
     console.error("One or more elements not found!");
 }
+document.addEventListener('DOMContentLoaded', function () {
+    // Add event listener to the navigation toggle button
+    const navToggle = document.getElementById('nav-toggle');
+    const navItems = document.getElementById('nav-items');
+
+    navToggle.addEventListener('click', function () {
+        navItems.classList.toggle('show'); // Toggle the 'show' class on the navigation items
+        navToggle.querySelector('.toggle_icon').classList.toggle('active'); // Toggle the 'active' class on the toggle icon
+    });
+});

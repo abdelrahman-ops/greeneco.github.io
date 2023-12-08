@@ -42,6 +42,12 @@ header {
     margin: 0 auto;
     transition: background-color 0.3s ease;
 }
+nav ul{
+    float: right;
+}
+nav ul li a{
+    text-transform: uppercase;
+}
 .nav,
 .nav_item {
     display: flex;
@@ -77,9 +83,6 @@ header {
 }
 .nav_link{
     transition: background-color 0.3s ease;
-}
-section {
-    transition: background-color 0.3s; /* Smooth background color transition */
 }
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* Home */
@@ -344,3 +347,71 @@ footer {
 }
 
 
+@media screen and (max-width: 768px) {
+    .nav_item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+@media screen and (max-width: 768px) {
+    .nav_item {
+        flex-direction: column;
+        align-items: center;
+    }
+    /* Add more adjustments for smaller screens */
+}
+.nav_logo {
+    font-size: 2em;
+}
+
+/* Add styles for the navigation toggle button */
+.nav_toggle {
+    display: none; /* Initially hide the toggle button */
+    cursor: pointer;
+}
+
+.toggle_icon {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    display: block;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+    /* Styles for smaller screens */
+    .nav_items {
+        display: none; /* Initially hide the navigation items on small screens */
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Adjust as needed based on your header height */
+        left: 0;
+        background-color: #335C67;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav_items.show {
+        display: flex; /* Show the navigation items when the class 'show' is added */
+    }
+
+    .toggle_icon.active {
+        transform: rotate(90deg); /* Rotate the icon when the navigation is open */
+    }
+
+    .nav_toggle {
+        display: block; /* Show the toggle button on small screens */
+    }
+
+    .nav_item {
+        width: 100%;
+        text-align: center;
+    }
+}
